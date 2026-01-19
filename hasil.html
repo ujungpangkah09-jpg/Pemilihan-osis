@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Hasil Pemilihan</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header><h1>Hasil Pemilihan</h1></header>
+  <div class="container">
+    <canvas id="hasilChart"></canvas>
+  </div>
+  <script>
+    const ctx = document.getElementById('hasilChart');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Andi', 'Budi'],
+        datasets: [{
+          label: 'Jumlah Suara',
+          data: [180, 140],
+          backgroundColor: ['#0d47a1', '#fbc02d']
+        }]
+      }
+    });
+  </script>
+</body>
+</html>
