@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Voting Siswa</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    function konfirmasiVote(nama) {
+      if(confirm("Apakah Anda yakin memilih " + nama + "?")) {
+        alert("Terima kasih, suara Anda telah direkam!");
+      }
+    }
+  </script>
+</head>
+<body>
+  <header><h1>Voting Ketua OSIS</h1></header>
+  <div class="container">
+    <div class="card">
+      <h3>Nomor 1 - Andi</h3>
+      <button onclick="konfirmasiVote('Andi')">Pilih</button>
+    </div>
+    <div class="card">
+      <h3>Nomor 2 - Budi</h3>
+      <button onclick="konfirmasiVote('Budi')">Pilih</button>
+    </div>
+  </div>
+</body>
+</html>
