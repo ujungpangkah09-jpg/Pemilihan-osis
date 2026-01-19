@@ -1,62 +1,94 @@
-/* Warna identitas sekolah */
+/* Warna identitas sekolah + tema modern */
 :root {
   --primary: #0d47a1; /* biru tua */
   --accent: #fbc02d;  /* kuning emas */
-  --background: #ffffff;
-  --text: #333333;
+  --gradient: linear-gradient(135deg, #0d47a1, #673ab7);
+  --background: #f0f2f5;
+  --text: #333;
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Inter', sans-serif;
   margin: 0;
   background: var(--background);
   color: var(--text);
 }
 
-.container {
-  max-width: 600px;
-  margin: auto;
-  padding: 20px;
-}
-
-.card {
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  padding: 20px;
-  margin-bottom: 20px;
-}
-
-button {
-  background: var(--primary);
+/* Header dengan gradient */
+header {
+  text-align: center;
+  padding: 40px 20px;
+  background: var(--gradient);
   color: #fff;
+  border-radius: 0 0 20px 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Card dengan glassmorphism */
+.card {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 24px;
+  margin: 20px auto;
+  max-width: 500px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.2);
+}
+
+/* Tombol modern */
+button {
+  background: var(--accent);
+  color: #000;
   border: none;
-  padding: 12px 20px;
-  border-radius: 6px;
+  padding: 14px 24px;
+  border-radius: 12px;
   cursor: pointer;
   font-size: 16px;
+  font-weight: bold;
+  width: 100%;
+  transition: all 0.3s ease;
 }
 
 button:hover {
-  background: #1565c0;
+  background: #ffeb3b;
+  box-shadow: 0 0 12px rgba(251,192,45,0.8);
+  transform: scale(1.05);
 }
 
-header {
-  text-align: center;
-  padding: 20px;
-  background: var(--primary);
-  color: #fff;
-}
-
+/* Navigasi modern */
 nav {
-  background: var(--accent);
-  padding: 10px;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 20px;
+  background: var(--gradient);
+  padding: 12px;
+  border-radius: 0 0 20px 20px;
 }
 
 nav a {
-  color: #000;
+  color: #fff;
   text-decoration: none;
   font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+/* Responsif */
+@media (max-width: 600px) {
+  .card {
+    margin: 10px;
+    padding: 16px;
   }
+  button {
+    font-size: 14px;
+  }
+}
